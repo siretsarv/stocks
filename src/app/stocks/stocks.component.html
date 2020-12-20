@@ -1,0 +1,40 @@
+<div class="stock-list-wrapper">
+    <div class="pager">
+        <span>
+            <ng-template [ngIf]="day > 1">
+                <a (click)="pastDay()" class="prev"></a>
+            </ng-template>
+        </span>
+
+        <span>Day {{ day }}</span>
+
+        <span>
+            <a (click)="nextDay()" class="next"></a>
+        </span>
+    </div>
+
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th class="text">Name</th>
+                <th>Index</th>
+                <th class="number">Initial price</th>
+                <th class="number">Current price</th>
+                <th class="number">Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stock of currentDay">
+                <td class="text">{{ stock.name }}</td>
+                <td>{{ stock.symbol }}</td>
+                <td class="number">{{ stock.price }}</td>
+                <td class="number">{{ stock.currentPrice }}</td>
+                <td class="number">{{ stock.change }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>{{ date | date:'fullDate' }}</p>
+</div>
+
+

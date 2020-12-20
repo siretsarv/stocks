@@ -1,0 +1,50 @@
+.stock-list-wrapper {
+    
+    .pager {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 1em;
+
+        span {
+            min-width: 25px;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        .next::before,
+        .prev::before {
+            content: '';
+            height: 25px;
+            width: 25px;
+            float: left;
+        }
+
+        .next::before {
+            background: url('/assets/icons/right-arrow.svg') no-repeat;
+        }
+
+        .prev::before {
+            background: url('/assets/icons/left-arrow.svg') no-repeat;
+        }
+    }
+
+    table {
+        width: 100%;
+
+        th, td {
+            width: 20%;
+        }
+
+        .number {
+            text-align: right;
+        }
+
+        .text {
+            text-align: left;
+        }
+    }
+}
